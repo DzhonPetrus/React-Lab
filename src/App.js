@@ -11,6 +11,7 @@ import GCFCalculator from './components/GCFCalculator';
 import StateSample from './components/StateSample';
 import Converter from './components/Converter';
 import HigherLower from './components/HigherLower';
+import Dog from './components/Dog';
 
 
 class App extends Component {
@@ -28,6 +29,9 @@ class App extends Component {
   render() {
     return (
       <>
+        <Dog />
+        <hr/>
+
         <Counter />
         <hr/>
 

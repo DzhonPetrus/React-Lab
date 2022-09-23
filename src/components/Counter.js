@@ -17,14 +17,14 @@ class Counter extends Component {
   }
 
   increment = () => {
-    if(this.state.counter >= this.maxNum)
-      return alert(`Counter cannot be more than ${this.maxNum}`);
+    if(this.state.counter+this.incrementBy > this.maxNum)
+      return alert(`Increment Counter by: ${this.incrementBy} | Counter cannot be more than ${this.maxNum}`);
     this.setState({counter:this.state.counter+this.incrementBy});
   }
 
   decrement = () => {
-    if(this.state.counter <= this.leastNum)
-      return alert(`Counter cannot be less than ${this.leastNum}`);
+    if(this.state.counter-this.decrementBy < this.leastNum)
+      return alert(`Decrement Counter by: ${this.decrementBy} | Counter cannot be less than ${this.leastNum}`);
     this.setState({counter:this.state.counter-this.decrementBy});
   } 
 
