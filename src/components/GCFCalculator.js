@@ -15,7 +15,7 @@ class GCFCalculator extends Component {
 
   getValue = (e) => {
     const thisId = e.target.id;
-    const thisValue = e.target.value;
+    const thisValue = parseInt(e.target.value);
 
     if(thisId === "first")
       this.setState({first:thisValue});
@@ -43,7 +43,8 @@ class GCFCalculator extends Component {
           </div>
         <button className="btn btn-primary" onClick={() => this.findGCF(this.state.first, this.state.second)}>Get GCF</button>
         </div>
-        <h3>GCF: {this.state.gcf === 0 ? "NO INPUT" : this.state.gcf}</h3>
+        <h3>Num1: {this.state.first} | Num2: {this.state.second}</h3>
+        <h3 style={{visibility: this.state.gcf === 0 ? "hidden" : ""}}>GCF: {this.state.gcf === 0 ? "NO INPUT" : this.state.gcf}</h3>
       </>
     );
   }

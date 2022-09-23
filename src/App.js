@@ -1,12 +1,16 @@
 import {Component} from 'react';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
 import Counter from "./components/Counter";
 import Header from "./components/Header";
 import Subheader from "./components/Subheader";
 import TodoList from "./components/TodoList";
 import Game from "./components/TicTacToe/Game";
 import GCFCalculator from './components/GCFCalculator';
+import StateSample from './components/StateSample';
+import Converter from './components/Converter';
+import HigherLower from './components/HigherLower';
 
 
 class App extends Component {
@@ -24,11 +28,23 @@ class App extends Component {
   render() {
     return (
       <>
-        <h2>GCF Calculator</h2>
-        <GCFCalculator />
+        <Counter />
         <hr/>
 
-        <Counter />
+        <h2>Converter</h2>
+        <Converter />
+        <hr/>
+
+        <h2>Higher Lower</h2>
+        <HigherLower />
+        <hr/>
+
+        <h2>State Sample</h2>
+        <StateSample />
+        <hr/>
+
+        <h2>GCF Calculator</h2>
+        <GCFCalculator />
         <hr/>
 
         <Header/>

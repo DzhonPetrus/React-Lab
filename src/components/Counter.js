@@ -9,10 +9,24 @@ class Counter extends Component {
       counter:0,
     };
 
+    this.incrementBy=3;
+    this.decrementBy=2;
+    this.maxNum=50;
+    this.leastNum=-10;
+
   }
 
-  increment = () => this.setState({counter:this.state.counter+1}) ;
-  decrement = () => this.setState({counter:this.state.counter-1}) ;
+  increment = () => {
+    if(this.state.counter >= this.maxNum)
+      return alert(`Counter cannot be more than ${this.maxNum}`);
+    this.setState({counter:this.state.counter+this.incrementBy});
+  }
+
+  decrement = () => {
+    if(this.state.counter <= this.leastNum)
+      return alert(`Counter cannot be less than ${this.leastNum}`);
+    this.setState({counter:this.state.counter-this.decrementBy});
+  } 
 
   render() {
     return (
