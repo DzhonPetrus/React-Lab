@@ -1,12 +1,22 @@
-function TodoList(props){
-    const todosJSX = [];
-    props.todos.forEach((todo,idx) => todosJSX.push(<li><input type="checkbox" value="{idx}"/>{todo}</li>));
+import { Component } from 'react';
 
-    return (
-        <ul>
-            {todosJSX}
-        </ul>
-    );
+class TodoList extends Component{
+    constructor(props){
+        super(props);
+
+        this.todosJSX = [];
+        props.todos.forEach((todo,idx) => this.todosJSX.push(<li><input type="checkbox" value="{idx}" />{todo}</li>));
+    }
+
+
+    render(){
+
+        return (
+            <ul>
+                {this.todosJSX}
+            </ul>
+        );
+    }
 }
 
 export default TodoList;
