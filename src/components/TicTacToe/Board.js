@@ -7,16 +7,15 @@ class Board extends Component {
         this.state = {
             squares: Array(9).fill(null),
             nextPlayer: "X",
-            currentPlayer: "O",
         };
     }
 
     handleClick(i){
+        this.currPlayer = this.state.nextPlayer == "X" ? "O" : "X";
         const squares = this.state.squares;
-        squares[i] = this.state.currentPlayer;
+        squares[i] = this.currPlayer;
         this.setState({squares});
-        this.setState({currentPlayer : this.state.nextPlayer == "X" ? "O" : "X"});
-        this.setState({nextPlayer: this.state.currentPlayer})
+        this.setState({nextPlayer: this.currPlayer})
     }
 
     renderSquare(i) {
@@ -24,7 +23,7 @@ class Board extends Component {
     }
 
     render() {
-        const status = `CurrentPlayer: ${this.state.currentPlayer} | Next player: ${this.state.nextPlayer}`;
+        const status = `Next player: ${this.state.nextPlayer}`;
 
         return (
         <div>
