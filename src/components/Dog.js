@@ -1,37 +1,27 @@
-import {Component} from 'react';
+import { useState, useEffect } from "react";
 
-class Dog extends Component {
+function Dog() {
+  const [dogImg, setDogImg] = useState("");
 
-  constructor(props){
-    super(props);
+  // Will only run once on the First Render
+  useEffect(() => fetchDog, []);
 
-    this.state = {
-      dogImg:""
-    };
-
-    this.fetchDogs();
-
-  }
-
-  fetchDogs = () => {
+  const fetchDog = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
       .then(response => response.json())
-      .then(data => this.setState({dogImg:data.message}))
-
+      .then(data => setDogImg(data.message))
   }
 
-  render() {
-    return (
-      <>
-        <div className='container'>
-          <h2>Dog</h2>
-          <button className='btn btn-success' onClick={this.fetchDogs}>Fetch New Dog</button>
-          <br/>
-          <img className='img-fluid' alt='dog' height={300} width={300} src={this.state.dogImg} />
-        </div>
-      </>
-    );
-  }
+  return (
+    <>
+      <div className='container'>
+        <h2>Dog</h2>
+        <button className='btn btn-success' onClick={() => fetchDog()}>Fetch New Dog</button>
+        <br/>
+        <img className='img-fluid' alt='dog' height={300} width={300} src={dogImg} />
+      </div>
+    </>
+  );
 }
 
 

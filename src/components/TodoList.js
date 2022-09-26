@@ -5,7 +5,7 @@ class TodoList extends Component{
         super(props);
 
         this.todosJSX = [];
-        props.todos.forEach((todo,idx) => this.todosJSX.push(<li><input type="checkbox" value="{idx}" />{todo}</li>));
+        props.todos.forEach((todo,idx) => this.todosJSX.push(<li key={idx}><input type="checkbox" value="{idx}" />{todo}</li>));
     }
 
 
