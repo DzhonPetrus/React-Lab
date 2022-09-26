@@ -9,23 +9,23 @@ class Counter extends Component {
       counter:0,
     };
 
-    this.incrementBy=3;
-    this.decrementBy=2;
-    this.maxNum=50;
-    this.leastNum=-10;
+    Counter.INCREMENT_BY=3;
+    Counter.DECREMENT_BY=2;
+    Counter.MAX_NUM=50;
+    Counter.LEAST_NUM=-10;
 
   }
 
   increment = () => {
-    if(this.state.counter+this.incrementBy > this.maxNum)
-      return alert(`Increment Counter by: ${this.incrementBy} | Counter cannot be more than ${this.maxNum}`);
-    this.setState({counter:this.state.counter+this.incrementBy});
+    if(this.state.counter+Counter.INCREMENT_BY > Counter.MAX_NUM)
+      return alert(`Increment Counter by: ${Counter.INCREMENT_BY} | Counter cannot be more than ${Counter.MAX_NUM}`);
+    this.setState({counter:this.state.counter+Counter.INCREMENT_BY});
   }
 
   decrement = () => {
-    if(this.state.counter-this.decrementBy < this.leastNum)
-      return alert(`Decrement Counter by: ${this.decrementBy} | Counter cannot be less than ${this.leastNum}`);
-    this.setState({counter:this.state.counter-this.decrementBy});
+    if(this.state.counter-Counter.DECREMENT_BY < Counter.LEAST_NUM)
+      return alert(`Decrement Counter by: ${Counter.DECREMENT_BY} | Counter cannot be less than ${Counter.LEAST_NUM}`);
+    this.setState({counter:this.state.counter-Counter.DECREMENT_BY});
   } 
 
   render() {
