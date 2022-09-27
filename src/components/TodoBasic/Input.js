@@ -1,7 +1,12 @@
 import {useRef} from 'react';
 
 function Input({addTodo}){
-  const inputTodo = useRef("");
+  const inputTodo = useRef();
+  const newTodo = () => {
+    const todo = inputTodo.current.value;
+    addTodo(todo);
+    inputTodo.current.value = "";
+  }
 
   return (
     <>
@@ -10,7 +15,7 @@ function Input({addTodo}){
           <input className="form-control" type="text" placeholder="New Todo" ref={inputTodo}/>
         </div>
         <div className="col-1">
-        <button className="btn btn-primary" onClick={() => addTodo(inputTodo.current.value)}>+</button>
+        <button className="btn btn-primary" onClick={newTodo}>+</button>
         </div>
       </div>
     </>
