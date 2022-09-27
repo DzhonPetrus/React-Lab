@@ -12,6 +12,7 @@ import StateSample from './components/StateSample';
 import Converter from './components/Converter';
 import HigherLower from './components/HigherLower';
 import Dog from './components/Dog';
+import HigherLowerFunctional from './components/HigherLowerFunctional';
 
 
 class App extends Component {
@@ -29,6 +30,10 @@ class App extends Component {
   render() {
     return (
       <>
+        <h2>Higher Lower Functional</h2>
+        <HigherLowerFunctional />
+        <hr/>
+
         <Dog />
         <hr/>
 
