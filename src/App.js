@@ -13,6 +13,7 @@ import Converter from './components/Converter';
 import HigherLower from './components/HigherLower';
 import Dog from './components/Dog';
 import HigherLowerFunctional from './components/HigherLowerFunctional';
+import TodoBasic from './components/TodoBasic/TodoBasic';
 
 
 class App extends Component {
@@ -30,6 +31,11 @@ class App extends Component {
   render() {
     return (
       <>
+        <h1>Basic Todo List</h1>
+        <Subheader name="John Peter"/>
+        <TodoBasic />
+        <hr/>
+
         <h2>Higher Lower Functional</h2>
         <HigherLowerFunctional />
         <hr/>
