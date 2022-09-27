@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 /*
 1. Accept the input of the user
@@ -11,9 +11,8 @@ function HigherLowerFunctional(){
 
   const [guess, setGuess] = useState(0);
   const [hint, setHint] = useState("Please Guess");
-  const [NUM_TO_GUESS, setNUM_TO_GUESS] = useState(0);
+  const [NUM_TO_GUESS] = useState(Math.floor(Math.random() * 1000));
 
-  useEffect(() => setNUM_TO_GUESS(Math.floor(Math.random() * 1000)),[])
 
 
   const guessNumber = (e) => {
