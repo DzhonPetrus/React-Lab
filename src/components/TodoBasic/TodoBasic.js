@@ -1,17 +1,56 @@
 import Input from "./Input";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import List from "./List";
 
 function TodoBasic(){
-  const [todos, setTodos] = useState(["Clean table", "Brew coffee", "Drink Coffee"]);
+  const sampleTodos = [
+    {
+      id:1,
+      task: "Clean table",
+      isDone: true
+    },
+    {
+      id:2,
+      task: "Brew coffee",
+      isDone: false
+    },
+    {
+      id:3,
+      task: "Drink coffee",
+      isDone: false
+    },
+  ];
+  const [todosCount, setTodosCount] = useState(0);
 
-  const addTodo = (newTodo) => setTodos([...todos, newTodo]);
+
+  const [todos, setTodos] = useState(sampleTodos);
+
+  const addTodo = (newTask) => {
+    const newTodo = {
+      id: todosCount+1,
+      task: newTask,
+      isDone: false
+    };
+
+    setTodos([...todos, newTodo]);
+  };
+
+  const checkTodo = (todo) => {
+    todo.isDone = !todo.isDone;
+    const newTodos = [...todos.map(_todo => _todo.id !== todo.id ? _todo : todo)];
+    setTodos(newTodos);
+  }
+
+  useEffect(() => {
+    setTodosCount(todos.length);
+  }, [setTodosCount, todos]);
 
   return (
     <>
+    <h5>Todos: {todosCount} | Remaining: {todos.filter(_todo => !_todo.isDone).length} </h5>
       <Input addTodo={addTodo}/>
 
-      <List todos={todos} />
+      <List todos={todos} checkTodo={checkTodo}/>
     </>
   );
 }
