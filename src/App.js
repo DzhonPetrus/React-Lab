@@ -14,6 +14,7 @@ import HigherLower from './components/HigherLower';
 import Dog from './components/Dog';
 import HigherLowerFunctional from './components/HigherLowerFunctional';
 import TodoBasic from './components/TodoBasic/TodoBasic';
+import FormSample from './components/FormSample';
 
 
 class App extends Component {
@@ -31,6 +32,10 @@ class App extends Component {
   render() {
     return (
       <>
+        <h1>Form Sample</h1>
+        <FormSample />
+        <hr/>
+
         <h1>Basic Todo List</h1>
         <Subheader name="John Peter"/>
         <TodoBasic />
