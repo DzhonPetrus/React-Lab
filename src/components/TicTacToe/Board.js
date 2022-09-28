@@ -11,7 +11,7 @@ class Board extends Component {
     }
 
     handleClick(i){
-        this.currPlayer = this.state.nextPlayer == "X" ? "O" : "X";
+        this.currPlayer = this.state.nextPlayer === "X" ? "O" : "X";
         const squares = this.state.squares;
         squares[i] = this.currPlayer;
         this.setState({squares});
