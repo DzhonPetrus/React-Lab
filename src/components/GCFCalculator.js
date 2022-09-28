@@ -34,6 +34,7 @@ class GCFCalculator extends Component {
   render() {
     return (
       <>
+        <h2>GCF Calculator</h2>
         <div className='container row'>
           <div className='col-sm-6'>
             <input className="form-control" type="number" id="first" onChange={this.getValue} />

@@ -20,6 +20,7 @@ class StateSample extends Component {
   render() {
     return (
       <>
+        <h2>State Sample</h2>
         <div className='container border'>
           <p>Name: {this.state.name}</p>
           <p>Employee Status: {this.state.employeeStatus}</p>

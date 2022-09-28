@@ -38,6 +38,7 @@ class HigherLower extends Component {
   render() {
     return (
       <>
+        <h2>Higher Lower</h2>
         <input className="form-control" type="number" id="guess" onChange={this.guess} placeholder="guess" />
         <div id="hint">{this.state.hint}</div>
         <div id="yourGuess">Your Guess: {this.state.guess}</div>

@@ -32,6 +32,7 @@ function HigherLowerFunctional(){
 
   return (
     <>
+      <h2>Higher Lower Functional</h2>
       <input className="form-control" type="number" id="guess" onChange={guessNumber} placeholder="guess" />
       <div id="hint">{hint}</div>
       <div id="yourGuess">Your Guess: {guess}</div>

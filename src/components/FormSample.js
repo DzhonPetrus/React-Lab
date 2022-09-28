@@ -55,6 +55,8 @@ function FormSample() {
   }
 
   return(
+      <>
+      <h1>Form Sample</h1>
       <form onSubmit={submit}>
         <div className="form-group" >
           <input type="text"
@@ -72,6 +74,7 @@ function FormSample() {
           <button type="submit">Submit</button>
         </div>
       </form>
+      </>
   )
 }
 

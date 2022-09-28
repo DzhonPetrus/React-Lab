@@ -1,6 +1,7 @@
 import Input from "./Input";
 import {useEffect, useState} from 'react';
 import List from "./List";
+import Subheader from "../Subheader";
 
 function TodoBasic(){
   const sampleTodos = [
@@ -47,6 +48,8 @@ function TodoBasic(){
 
   return (
     <>
+    <h1>Basic Todo List</h1>
+    <Subheader name="John Peter"/>
     <h5>Todos: {todosCount} | Remaining: {todos.filter(_todo => !_todo.isDone).length} </h5>
       <Input addTodo={addTodo}/>
 

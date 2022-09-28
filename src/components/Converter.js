@@ -35,6 +35,7 @@ class Converter extends Component {
   render() {
     return (
       <>
+        <h2>Converter</h2>
         <div className='container row'>
           <div className='col-sm-6'>
             <input className="form-control" type="number" id="centimeters" onChange={this.convert} placeholder="centimeters" value={this.state.cm}/>
