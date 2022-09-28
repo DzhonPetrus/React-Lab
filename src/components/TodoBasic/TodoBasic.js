@@ -37,7 +37,6 @@ function TodoBasic(){
 
     setTodos([...todos, newTodo]);
     setFilteredTodos([...todos, newTodo]);
-  console.log(todos)
   };
 
   const checkTodo = (todo) => {
@@ -74,8 +73,8 @@ function TodoBasic(){
 
         <h5>Filter Todos</h5>
 
-        <div class="row justify-content-center">
-          <div class="col-5"><input className="form-control" type="text" ref={txtFilter} onChange={filterList}/></div>
+        <div className="row justify-content-center">
+          <div className="col-5"><input className="form-control" type="text" ref={txtFilter} onChange={filterList}/></div>
         </div>
 
         <h5>Todos: {todosCount} | Remaining: {filteredTodos.filter(_todo => !_todo.isDone).length} </h5>

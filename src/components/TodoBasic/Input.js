@@ -7,12 +7,16 @@ function Input({addTodo}){
     addTodo(todo);
     inputTodo.current.value = "";
   }
+  const handleKeyDown = (e) => {
+    if(e.key === 'Enter')
+      newTodo();
+  }
 
   return (
     <>
       <div className="row justify-content-center">
         <div className="col-4">
-          <input className="form-control" type="text" placeholder="New Todo" ref={inputTodo}/>
+          <input className="form-control" type="text" placeholder="New Task" onKeyDown={handleKeyDown} ref={inputTodo}/>
         </div>
         <div className="col-1">
         <button className="btn btn-primary" onClick={newTodo}>+</button>

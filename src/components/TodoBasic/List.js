@@ -7,11 +7,11 @@ function List({todos, checkTodo, deleteTodo}){
           <ul className='list-group'>
               {
               todos.map((todo) => {
-                return <li key={todo.id} className='list-group-item'>
+                return <li key={todo.id} className='list-group-item d-flex justify-content-between'>
                   <input type="checkbox" className='col-1' defaultChecked={todo.isDone} onChange={() => checkTodo(todo)}/>
-                  <span style={{textDecoration:todo.isDone ? 'line-through' : ''}}>
+                  <h5 style={{textDecoration:todo.isDone ? 'line-through' : ''}}>
                     {todo.task}
-                  </span>
+                  </h5>
                   <i className="btn" onClick={() => deleteTodo(todo.id)}>
                   X
                   </i>
