@@ -73,7 +73,10 @@ function TodoBasic(){
         <Subheader name="John Peter"/>
 
         <h5>Filter Todos</h5>
-        <input type="text" ref={txtFilter} onChange={filterList}/>
+
+        <div class="row justify-content-center">
+          <div class="col-5"><input className="form-control" type="text" ref={txtFilter} onChange={filterList}/></div>
+        </div>
 
         <h5>Todos: {todosCount} | Remaining: {filteredTodos.filter(_todo => !_todo.isDone).length} </h5>
         <Input addTodo={addTodo}/>
