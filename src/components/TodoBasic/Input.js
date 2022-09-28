@@ -10,7 +10,7 @@ function Input({addTodo}){
 
   return (
     <>
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="col-4">
           <input className="form-control" type="text" placeholder="New Todo" ref={inputTodo}/>
         </div>

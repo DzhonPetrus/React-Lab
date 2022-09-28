@@ -23,6 +23,7 @@ class AppRoutes extends Component {
   render() {
     return (
       <Routes>
+          <Route path="/" element={<TodoBasic />}/>
           <Route path="/users" element={<Users />}/>
           <Route path="/dog" element={<Dog />} />
           <Route path="/counter" element={<Counter />} />

@@ -10,6 +10,10 @@ class AppLinks extends Component {
 
     AppLinks.links = [
       {
+        to:"basicTodo",
+        title:"Basic Todo(Final Project)"
+      },
+      {
         to:"users",
         title:"Users"
       },
@@ -42,10 +46,6 @@ class AppLinks extends Component {
         title:"Form Sample"
       },
       {
-        to:"basicTodo",
-        title:"Basic Todo"
-      },
-      {
         to:"higherLowerFunctional",
         title:"Higher Lower Functional"
       },
@@ -66,7 +66,7 @@ class AppLinks extends Component {
   render() {
     return (
       <nav className="navbar">
-        {AppLinks.links.map(({to, title}) => <NavLink to={to}>{title}</NavLink>)}
+        {AppLinks.links.map(({to, title}, idx) => <NavLink key={idx} className="nav-link" to={to} >{title}</NavLink>)}
       </nav>
     );
   }

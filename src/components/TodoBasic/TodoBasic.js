@@ -30,18 +30,25 @@ function TodoBasic(){
 
   const addTodo = (newTask) => {
     const newTodo = {
-      id: todosCount+1,
+      id: (performance.now()+'').replace('.',''),
       task: newTask,
       isDone: false
     };
 
     setTodos([...todos, newTodo]);
-    setFilteredTodos(todos);
+    setFilteredTodos([...todos, newTodo]);
+  console.log(todos)
   };
 
   const checkTodo = (todo) => {
     todo.isDone = !todo.isDone;
     const newTodos = [...todos.map(_todo => _todo.id !== todo.id ? _todo : todo)];
+    setTodos(newTodos);
+    setFilteredTodos(newTodos);
+  }
+
+  const deleteTodo = (id) => {
+    const newTodos = [...todos.filter(_todo => _todo.id !== id)];
     setTodos(newTodos);
     setFilteredTodos(newTodos);
   }
@@ -60,16 +67,19 @@ function TodoBasic(){
 
   return (
     <>
-    <h1>Basic Todo List</h1>
-    <Subheader name="John Peter"/>
+      <div className="container text-center">
 
-    <h5>Filter Todos</h5>
-    <input type="text" ref={txtFilter} onChange={filterList}/>
+        <h1>Final Project - Basic Todo List</h1>
+        <Subheader name="John Peter"/>
 
-    <h5>Todos: {todosCount} | Remaining: {filteredTodos.filter(_todo => !_todo.isDone).length} </h5>
-      <Input addTodo={addTodo}/>
+        <h5>Filter Todos</h5>
+        <input type="text" ref={txtFilter} onChange={filterList}/>
 
-      <List todos={filteredTodos} checkTodo={checkTodo}/>
+        <h5>Todos: {todosCount} | Remaining: {filteredTodos.filter(_todo => !_todo.isDone).length} </h5>
+        <Input addTodo={addTodo}/>
+
+        <List todos={filteredTodos} checkTodo={checkTodo} deleteTodo={deleteTodo}/>
+      </div>
     </>
   );
 }
